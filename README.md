@@ -10,5 +10,5 @@ This project is limited to some e-commerce websites such as:
 ### Project Link
 
 ```
-(http://newfirebird.cs.txstate.edu/~j_k201/AIIP/SearchPage.html)
+http://newfirebird.cs.txstate.edu/~j_k201/AIIP/SearchPage.html
 ```
