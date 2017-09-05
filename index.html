@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CS-5334 Final Project</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/font-awesome.css">
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+</head>
+<body>
+
+<h1 class="text-center"> Electronic Search</h1>
+
+<form id="smart-search" action="parse.php" method="get">
+  <div class="form-horizontal">
+    <div class="form-group has-info">
+        <div class="controls col-md-8 col-md-offset-2">
+            
+                <input id="search-by-string"
+                       name="search-by-string"
+                       class="form-control input-lg"
+                       type="text"
+                       maxlength="500"
+					   placeholder="Search..."
+					   aria-describedby="helpBlock2">
+					   
+					   
+                <!-- <div class="input-group-btn">
+					<button id="btnsearch" type="button" class="btn btn-default">
+                        <i class="fa fa-fw fa-search fa-lg"></i>
+                    </button>
+                    <button id="btnreset" type="button" class="btn btn-default">
+                        <i class="fa fa-fw fa-times fa-lg"></i>
+                    </button>
+                </div> -->
+				<!--/.input-group-btn-->
+            
+			<div class="has-error">
+				<span id="helpBlock2" style="display:none" class="help-block">Please enter a keyword.</span>
+			</div>
+        </div>
+		
+		<!-- <div class="input-group-btn">
+			<button id="btnSearch" type="button" class="btn btn-default">
+				<i class="fa fa-fw fa-search fa-lg"></i>
+			</button>
+			<button id="btnReset" type="button" class="btn btn-default">
+				<i class="fa fa-fw fa-times fa-lg"></i>
+			</button>
+		</div> -->
+		
+    </div><!--/.form-group-->
+	<p class="text-center">
+		  <button id="btnSearch" type="button" class="btn btn-primary btn-lg">Search</button>
+		  <button id="btnReset" type="button" class="btn btn-default btn-lg">Clear</button>
+	</p>
+</div>
+</form>
+</body>
+
+<script type="text/javascript">
+	$('#btnReset').click(function(){
+		$('#search-by-string').val('');
+		$('#helpBlock2').hide();
+	});
+	
+	$('#btnSearch').click(function(){
+		if($('#search-by-string')[0].value.trim() == '')
+		{
+			$('#helpBlock2').show();
+			return false;
+		}
+		$('#smart-search').submit();
+	});
+</script>
+</html>
